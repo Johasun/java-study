@@ -1,0 +1,26 @@
+import java.io.FileReader;
+import java.io.FileWriter;
+
+/*
+	한글처리 ....
+	문자기반의 데이터 처리 (String 데이터 >> char[] 관리)
+
+	한글 1차, 영문자 1자 >> 2byte
+	
+	Reader, Writer
+	
+	대상 : 앞에 File... File.. 
+
+*/
+public class Ex05_Reader_writer {
+	public static void main(String[] args) {
+		FileReader fr = null;
+		FileWriter fw = null;
+		
+		try {
+			fr = new FileReader("");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

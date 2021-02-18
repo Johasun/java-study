@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Ex12_Inherit_KeyPoint.java&apos; to &apos;Ex12_Inherit_KeyPoint.java&apos;&#x0D;&#x0A;- Original project: &apos;Ex05_OOP&apos;&#x0D;&#x0A;- Destination element: &apos;Ex12_Inherit_KeyPoint.java&apos;&#x0D;&#x0A;- Original element: &apos;Ex12_Inherit_KeyPoint.java&apos;" description="Copy compilation unit" destination="/src&lt;{Ex12_Inherit_KeyPoint.java" element1="/src&lt;{Ex12_Inherit_KeyPoint.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1612745223078" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,10 @@
+
+public class Hw02_Dos {
+	public static void main(String[] args) {
+		if(args.length != 1) {
+			System.out.println("사용법: java [실행할파일명] [");
+		}
+		
+	}
+
+}

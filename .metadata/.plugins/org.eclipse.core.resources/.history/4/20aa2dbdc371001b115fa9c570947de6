@@ -1,0 +1,88 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.Set;
+import java.util.TreeSet;
+
+class Lotto{
+	
+	private Set<Integer> lotto;
+	private String lottoNumber;
+	private File file;
+	private BufferedWriter bw;
+	private int extractNum;
+	private FileReader fr;
+	private BufferedReader br;
+	
+	//로또 번호 뽑기
+	public void extractLottoNumber() {
+		lotto = new TreeSet<Integer>();
+		for(int i = 0; lotto.size()<6; i++) {
+			lotto.add((int)(Math.random()*45)+1);
+		}
+		
+		lottoNumber = lotto.toString();
+		extractNum++;
+		writeLottoNumber();
+		
+	}
+	
+	//로또 번호 작성하기
+	public void writeLottoNumber() {
+		try {
+			file = new File("lottolist.txt");
+			bw = new BufferedWriter(new FileWriter(file, true));
+			
+			bw.write(extractNum+"회차 로또 번호\n");
+			bw.write(lottoNumber+"\n");
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			try {
+				bw.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+	}
+	
+	//로또 번호 읽기
+	public void readLottoNumber() {
+		try {
+			// TODO: file이 없거나 비었을때
+			
+			fr = new FileReader(file);
+			br = new BufferedReader(fr);
+			
+			String line = "";
+			for(int i = 0; (line = br.readLine()) != null; i++) {
+				System.out.println(line);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			try {
+				fr.close();
+				br.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+	}
+}
+
+public class Hw01_Lotto2 {
+	public static void main(String[] args) {
+		Lotto lotto = new Lotto();
+		lotto.extractLottoNumber();
+		lotto.extractLottoNumber();
+		lotto.extractLottoNumber();
+		lotto.extractLottoNumber();
+		lotto.extractLottoNumber();
+		lotto.extractLottoNumber();
+		lotto.readLottoNumber();
+	}
+}

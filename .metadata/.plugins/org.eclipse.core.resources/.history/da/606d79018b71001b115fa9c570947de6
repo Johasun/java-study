@@ -1,0 +1,37 @@
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+/*
+ 
+ 대상 read, wrote (File) >> 1. txt, 2. 메모
+ 
+ >>FileInputSream
+ >>FileOutputSream
+
+
+*/
+public class Ex02_PR2_FileStream {
+	public static void main(String[] args) {
+		FileInputStream fs = null;
+		FileOutputStream fos = null;
+		String path="C:\\Temp\\a.txt";
+		
+		try {
+			fs = new FileInputStream(path);
+			fos = new FileOutputStream("C:\\Temp\\new.txt");
+			int data = 0;
+			while((data=fs.read()) != -1){
+				System.out.println("정수: "+data); //char 정수 변환해서
+				//문자값
+				System.out.println("문자: "+(char)data);
+				fos.write(data);
+				//new.txt 파일에 data 값을 write 
+				//FileOutputStream write 하려고 하는 파일 없으면
+				//파일도 생성(생성 기능)
+			}
+			
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+}

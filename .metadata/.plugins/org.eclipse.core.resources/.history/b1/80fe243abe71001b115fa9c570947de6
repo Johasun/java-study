@@ -1,0 +1,32 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.Set;
+import java.util.TreeSet;
+
+//today 과제 (Lotto 입력 출력(read , write) 추가 조별과제
+
+public class Hw01_Lotto {
+	public static void main(String[] args) {
+		
+		Set<Integer> lotto = new TreeSet<Integer>();
+		for(int i = 0; lotto.size()<6; i++) {
+			lotto.add((int)(Math.random()*45)+1);
+		}
+		
+		String s = lotto.toString();
+		
+		try {
+			File file = new File("lottolist.txt");
+			BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+			
+			bw.write(s);
+			bw.close();
+			
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		} 
+		
+	}
+}

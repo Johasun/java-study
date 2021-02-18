@@ -1,0 +1,34 @@
+import java.util.HashMap;
+
+/*
+Map 인터페이스
+Map (key, value) 쌍의 구조를 갖는 배열
+ex) (02,서울) (031,경기)
+key : 중복(X)
+value : 중복(O)
+generic 지원 (key, value 타입을 강제 가능)
+
+Map 인터페이스 구현
+구버전 : HashTable 동기화
+신버전 : HashMap(동기화 강제하지 않아요): 성능고려
+*/
+public class Ex12_Map_Interface {
+	public static void main(String[] args) {
+		//HashMap<K, V>
+		HashMap map = new HashMap();
+		map.put("Tiger", "1004");
+		map.put("scott", "1004");
+		map.put("superman", "1004");
+		//사용자 ID, PWD 관리
+		System.out.println(map.containsKey("tiger")); //대소문자구분 -> false
+		//중복 ID 검사
+		System.out.println(map.containsKey("scott")); 
+		System.out.println(map.containsValue("1004"));
+		System.out.println(map.containsValue("1007"));
+		
+		//point
+		//key제공하면 value 값을 알수있다
+		System.out.println(map.get("superman"));
+		
+	}
+}

@@ -1,0 +1,40 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.util.Set;
+import java.util.TreeSet;
+
+//today 과제 (Lotto 입력 출력(read , write) 추가 조별과제
+
+
+class Lotto {
+	Set<Integer> lotto;
+	FileWriter fw;
+	BufferedWriter bw;
+	
+	Lotto(){
+		new TreeSet<Integer>();
+		
+	}
+	
+	public void lottoNumber() { //로또 번호 뽑기
+		for(int i = 0; lotto.size()<6; i++) {
+			lotto.add((int)(Math.random()*45)+1);
+		}
+		writeLotto(lotto);
+	}
+	
+	public void readLotto() { //로또 읽기
+		
+	}
+	
+	public void writeLotto(Set lotto) { //로또 쓰기
+		bw.write((char)lotto);
+	}
+	
+}
+
+public class Hw01_Lotto {
+	public static void main(String[] args) {
+		
+	}
+}

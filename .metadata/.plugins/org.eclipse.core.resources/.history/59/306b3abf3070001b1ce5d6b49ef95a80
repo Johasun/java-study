@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+
+public class Bank {
+	ArrayList<Account> accounts; //계좌
+	int totalAccount; //총계좌수
+	
+	//계좌를 생성한다
+	void addAccount(String accountNo, String name) {
+		accounts = new ArrayList<Account>();
+		accounts.add(new Account(accountNo, name));
+		// TODO 계좌번호 생성 함수 만들기 -> 이름만 사용자한테 받도록..
+		
+	}
+	
+	//계좌를 찾는다(계좌번호로)
+	Account getAccount(String accountNo) {
+		return;
+	}
+	
+	//계좌를 찾는다(소유자명으로)
+	Account[] findAccounts(String name) {
+		return;
+	}
+	
+	//계좌목록을 본다
+	void Accounts() {
+		System.out.println("= 전체 계좌 목록 =");
+		for(Account a : accounts) {
+			System.out.println(a);
+		}
+	}
+	
+	//총계좌수를 반환한다
+	void TotalAccount() {
+		System.out.println("총 계좌 수 : "+totalAccount);
+	}
+}

@@ -1,0 +1,82 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Set;
+import java.util.TreeSet;
+
+//today 과제 (Lotto 입력 출력(read , write) 추가 조별과제
+
+
+class Lotto {
+	Set<Integer> lotto;
+	FileWriter fw;
+	BufferedWriter bw;
+	BufferedReader br;
+	
+	Lotto(){
+		new TreeSet<Integer>();
+		
+	}
+	
+	public void lottoNumber() { //로또 번호 뽑기
+		for(int i = 0; lotto.size()<6; i++) {
+			lotto.add((int)(Math.random()*45)+1);
+		}
+		writeLotto(lotto);
+	}
+	
+	public void readLotto() { //로또 읽기
+		File f = new File("lottoprint.txt");
+		if(!f.exists()) {
+			System.out.println("아직 로또 번호 없음");
+			return;
+		}
+		try {
+			String s;
+			br = new BufferedReader(new FileReader(f));
+			
+			while((s=br.readLine())!=null) {
+				System.out.println(s);
+			}
+		} catch (Exception e) {
+			try {
+				br.close();
+			} catch (Exception e2) {
+				
+			}
+		}
+		
+	}
+	
+	public void writeLotto(Set<Integer> lotto) { //로또 쓰기
+
+		try {
+			fw = new FileWriter("lottoprint.txt", true);
+			bw = new BufferedWriter(fw);
+			
+			String s = lotto.toString();
+			
+			bw.write(s);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+}
+
+public class Hw01_Lotto {
+	public static void main(String[] args) {
+		
+		Lotto lo = new Lotto();
+		lo.lottoNumber();
+		lo.lottoNumber();
+		lo.lottoNumber();
+		lo.lottoNumber();
+		lo.readLotto();
+		
+	}
+}

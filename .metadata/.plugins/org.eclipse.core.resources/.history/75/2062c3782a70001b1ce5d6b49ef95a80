@@ -1,0 +1,8 @@
+
+public class Transaction {
+	String transactionDate; //거래일
+	String transactionTime; //거래시간
+	String kind; //구분 (입금 또는 출금)
+	long amount; //거래금액
+	long balance; //잔고
+}

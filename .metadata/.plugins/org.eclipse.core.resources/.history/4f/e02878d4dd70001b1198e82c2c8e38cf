@@ -1,0 +1,25 @@
+
+public class Transaction {
+	String transactionDate; //거래일
+	String transactionTime; //거래시간
+	String kind; //구분 (입금 또는 출금)
+	long amount; //거래금액
+	long balance; //잔고
+	
+	public Transaction(String transactionDate, String transactionTime, String kind, long amount, long balance) {
+		this.transactionDate = transactionDate;
+		this.transactionTime = transactionTime;
+		this.kind = kind;
+		this.amount = amount;
+		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+		return "[거래금액:"+amount+",원 잔액:"+balance+"원 거래시간: "+transactionDate+transactionTime+"]";
+	}
+	
+	
+	
+	
+}

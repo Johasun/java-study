@@ -1,0 +1,9 @@
+
+public class Main {
+	public static void main(String[] args) {
+		Bank bank = new Bank("10071", "πÈ");
+		Bank bank = new Bank("890113", "≈√");
+		Bank bank = new Bank("0113", "≈√");
+		Bank bank = new Bank("987654321", "µŒ∆»");
+	}
+}

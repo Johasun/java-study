@@ -1,0 +1,69 @@
+import java.util.ArrayList;
+
+public class Account {
+	String accountNo; // 계좌번호
+	String name;  // 소유자명
+	private long balance ; // 잔고
+	private ArrayList<Transaction> transaction; //거래내역(0개이상)
+
+	//계좌 생성자 이름과 계좌번호를 입력하면 계좌가 생성된다.
+	public Account(String accountNo, String name) {
+		this.accountNo = accountNo;
+		this.name = name;
+		this.balance = 0;
+		transaction = new ArrayList<Transaction>();
+	}
+
+	@Override
+	public String toString() {
+		
+		return "계좌번호 :"+this.accountNo+", 소유자 명 : "+this.name+", 잔액 : "+this.balance+"원";
+	}
+
+
+
+	//입금한다
+	public void deposit(long amount) {
+		//amount 값을 잔고에 넣어준다
+		this.balance+=amount;
+		System.out.println(amount+"원을 입금하였습니다.");
+		System.out.println("현재잔액은 "+this.balance+"원 입니다.");
+		//거래내역에 저장하는 단계
+		transaction.add(new Transaction("거래일", "거래시간", "입금", amount, this.balance));
+		// TODO 거래일, 거래시간 넣기
+		
+	}
+	
+	//출금한다
+	public void withdraw(long amount) {
+		//만약 잔고가 비었다면?
+		if(balance==0) {
+			System.out.println("잔액이 부족합니다. 현재잔액: "+this.balance);
+			return;
+		} 
+		//amount 값을 잔고에서 빼낸다
+		else {
+			this.balance-=amount;
+			System.out.println(amount+"원을 인출하였습니다");
+			System.out.println("현재잔액은 "+this.balance+"원 입니다.");
+		}
+		//거래내역에 저장하는 단계
+		
+		transaction.add(new Transaction("거래일", "거래시간", "출금", amount, this.balance));
+
+	}
+	
+	//잔고를 확인한다
+	public long getBalance() {
+		return this.balance;
+	}
+	
+	//거래내역을 본다
+	public void Transactions() {
+		System.out.println("= 거래내역 =");
+		for(Transaction t : transaction) {
+			System.out.println(t);
+		}
+	}
+	
+}

@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+
+public class Account {
+	String accountNo; // 계좌번호
+	String name;  // 소유자명
+	long balance ; // 잔고
+	ArrayList<Transaction> transaction; //거래내역(0개이상)
+	
+	//계좌 생성자 이름과 계좌번호를 입력하면 계좌가 생성된다.
+	Account(String accountNo, String name) {
+		this.accountNo = accountNo; // 계좌번호 생성함수 만들어보기
+		this.name = name;
+		this.balance = 0;
+		transaction = new ArrayList<Transaction>();
+	}
+	
+	//입금한다
+	void deposit(long amount) {
+		//amount 값을 잔고에 넣어준다
+		this.balance+=amount;
+		//거래내역에 저장하는 단계
+		transaction.add("", "", "", (long)amount, this.balance);
+	}
+	
+	//출금한다
+	void withdraw(long amount) {
+		//amount 값을 잔고에서 빼낸다
+		balance-=amount;
+		//만약 잔고가 비었다면?
+		
+		//거래내역에 저장하는 단계
+	}
+	
+	//잔고를 확인한다
+	long getBalance() {
+		return this.balance;
+	}
+	
+	//거래내역을 본다
+	Transaction[] Transactions() {
+		return;
+	}
+	
+}

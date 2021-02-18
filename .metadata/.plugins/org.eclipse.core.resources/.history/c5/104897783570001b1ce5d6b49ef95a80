@@ -1,0 +1,11 @@
+
+public class Main {
+	public static void main(String[] args) {
+		Bank bank = new Bank("10071", "πÈ");
+		Bank bank2 = new Bank("890113", "≈√");
+		Bank bank3 = new Bank("0113", "≈√");
+		Bank bank4 = new Bank("987654321", "µŒ∆»");
+		
+		System.out.println(bank.accountinfo.toString());
+	}
+}

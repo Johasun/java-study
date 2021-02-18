@@ -1,0 +1,53 @@
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.util.Arrays;
+
+/*
+ Stream  중간 매개체(데이터 통로) default : Byte
+
+ JAVA API
+ [추상 클래스]
+ InputStream, OUtPutStream
+
+ 입출력 [대상] 두개의 추상클래스 상속 재정의 해서 사용해라
+ 이미 상속받아서 재정의를 한 경우
+ 1. Memory : ByteArray ... 	, ByteArray.... 
+ 2. File : File... 			,File... ^^ (요넘)
+
+
+*/
+public class Ex01_Stream {
+	public static void main(String[] args) {
+		//byte(-128~127) 정수를 저장하는 데이터 타입 (0을 포함하기 때문에 127의 값을 가진다...)
+		//한방울씩 먹으면 너무 오래걸리니까 배열을 이용해서 한꺼번에 먹자..
+		byte[] inSrc = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+		byte[] outSrc = null; // 현재 메모리를 가지고 있지 않음(초기화안되어있음)
+		
+		//데이터를 read 하거나 write 하는 작업.. 이 대상이 memory... 
+		ByteArrayInputStream input = null;
+		ByteArrayOutputStream output = null;
+		
+		input = new ByteArrayInputStream(inSrc); //inSrc 배열(메모리) >> read
+		output = new ByteArrayOutputStream(); //write할때 쓸것
+		
+		System.out.println("outSrc before : "+Arrays.toString(outSrc));
+		
+		//공식같은 로직 
+		int data = 0;
+		while((data = input.read()) != -1) { //더이상 read data없으면 -1 return
+			System.out.println("data : "+data);
+//			System.out.println(input.read()); //read() 함수는 내부적으로 next()
+			//이렇게 read한 데이터를 다른 메모리에 write...
+			output.write(data);
+			//write의 대상이 데이터가 아니고..
+			//ByteArrayOutputStream 자신의 통로 data 가진다
+		}
+		
+		System.out.println(output.toByteArray());//가지고 있는 곳의 주소
+		
+		outSrc = output.toByteArray();
+		
+		System.out.println("outSrc after : "+outSrc);
+		
+	}
+}

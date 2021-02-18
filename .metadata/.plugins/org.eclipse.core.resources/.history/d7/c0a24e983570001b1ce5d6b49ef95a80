@@ -1,0 +1,26 @@
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
+public class Main {
+	public static void main(String[] args) {
+		Bank bank = new Bank("10071", "백");
+		Bank bank2 = new Bank("890113", "택");
+		Bank bank3 = new Bank("0113", "택");
+		Bank bank4 = new Bank("987654321", "두팔");
+		
+		System.out.println(bank.accountinfo.toString());
+		
+		SimpleDateFormat format = new SimpleDateFormat("yyyy년 MM월 dd일");
+		SimpleDateFormat format2 = new SimpleDateFormat("HH시 mm분");
+		
+		Date time = new Date(1);
+		
+		String time1 = format.format(time);
+		String time2 = format2.format(time);
+		
+		System.out.println(time1);
+		System.out.println(time2);
+		
+		
+	}
+}
