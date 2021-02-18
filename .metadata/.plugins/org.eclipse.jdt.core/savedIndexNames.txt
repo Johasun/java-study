@@ -1,13 +1,2 @@
 INDEX VERSION 1.131+C:\Users\whwog\Desktop\Labs\.metadata\.plugins\org.eclipse.jdt.core
-1827495120.index
-1426854757.index
-3236039166.index
-265506711.index
-1658264207.index
-2820476310.index
-450044671.index
-313289141.index
 3460880079.index
-2888972626.index
-2087006913.index
-218804959.index

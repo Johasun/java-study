@@ -12,6 +12,7 @@ import java.util.TreeSet;
 class Lotto{
 	
 	private Set<Integer> lotto; //로또
+	private String lottoNumber; 
 	private int extractNum; //로또 추출 횟수
 	
 	/////////////////
@@ -42,8 +43,9 @@ class Lotto{
 			lotto.add((int)(Math.random()*45)+1);
 		}
 		
+		lottoNumber = lotto.toString(); // 로또 값 String으로 담고 저장하는 함수 호출
 		extractNum++; //회차 늘리기
-		writeLottoNumber(lotto); // 파일에 로또 번호를 저장
+		writeLottoNumber(); // 파일에 로또 번호를 저장
 		
 		///////////////로또 번호 출력///////////////
 		it = lotto.iterator();
@@ -54,7 +56,7 @@ class Lotto{
 	}
 	
 	//로또 번호 저장
-	public void writeLottoNumber(Set<Integer> lotto) {
+	public void writeLottoNumber() {
 		try {
 			bw = new BufferedWriter(new FileWriter(file, true));
 			SimpleDateFormat sdf = new SimpleDateFormat //시간 뽑는단계
@@ -62,7 +64,7 @@ class Lotto{
 			
 			bw.write("☆★"+extractNum+"회차 로또 번호☆★\n");
 			bw.write("실행 시간: "+sdf.format(date));
-			bw.write("로또 번호: "+lotto+"\n");
+			bw.write("로또 번호: "+lottoNumber+"\n");
 
 			
 		} catch (Exception e) {
@@ -80,7 +82,7 @@ class Lotto{
 	public void readLottoNumber() {
 		try {
 			// file이 비었을때
-			if(extractNum==0) {
+			if(file.length()==0) {
 				System.out.println("로또 프로그램이 실행되지 않았습니다!^^");
 				return;
 			}
