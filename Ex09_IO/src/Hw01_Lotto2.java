@@ -36,6 +36,7 @@ class Lotto{
 		System.out.println("☆☆★★★★①②③④⑤⑥★★★★☆☆");
 		
 		
+		
 		///////////////로또 번호 뽑기///////////////
 		lotto = new TreeSet<Integer>();
 		for(int i = 0; lotto.size()<6; i++) {
