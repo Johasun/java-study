@@ -6,7 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="fileExist"/>
 		<list key="findhistory">
+			<item value="fileExist"/>
+			<item value="fileExitst"/>
 		</list>
 		<list key="replacehistory">
 		</list>
